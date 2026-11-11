@@ -54,3 +54,10 @@ Rounding happens *after* unit selection. `999_999_999` nanoseconds is below the
 one-second threshold, so it renders as `1000ms`, not `1s`. That is intentional:
 the unit is chosen by the raw value, and the rendered digits are then rounded.
 If you want the rounded value to influence unit selection, round before calling.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
