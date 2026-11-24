@@ -1,6 +1,6 @@
 {
   "name": "span-duration-string-formatter",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Converts nanosecond spans into readable time units per OpenTelemetry rules.",
   "type": "module",
   "main": "src/index.js",
